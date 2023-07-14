@@ -1,10 +1,10 @@
 ## Description
 
-Simple chatbot with pre-defined questions (here for a farm theme), based on gpt 3.5 turbo
+Simple chatbot with pre-defined questions (here for a farm theme), based on gpt 4
 
 ## Example
 
-https://farmchat.vercel.app
+https://gpt4-chat.vercel.app
 
 ## Getting Started
 

@@ -6,15 +6,12 @@ import styles from "../styles/Home.module.css";
 
 export default function Home() {
   const [messages, setMessages] = useState([
-    { sender: "Assistant", content: "I'm farmchat, how can I help you?" },
+    { sender: "Assistant", content: "I'm GPT4, how can I help you?" },
   ]);
 
   const [newMessage, setNewMessage] = useState("");
   const [loading, setLoading] = useState(false);
-  const preselectedQuestions = [
-    "Name the top 5 farm management applications, how do they compare?",
-    "Is it better for me to plant corn or build photovoltaic on my acre?",
-  ];
+  const preselectedQuestions = ["What is the best pasta recipe?"];
 
   const handleNewMessageChange = (event) => {
     setNewMessage(event.target.value);
