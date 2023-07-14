@@ -1,5 +1,5 @@
 // Home.js
-import React, { useState } from "react";
+import React, { useState, useRef, useEffect } from "react";
 import Layout from "../components/Layout";
 import { TextField, Button, CircularProgress, Box } from "@mui/material";
 import styles from "../styles/Home.module.css";
@@ -11,7 +11,16 @@ export default function Home() {
 
   const [newMessage, setNewMessage] = useState("");
   const [loading, setLoading] = useState(false);
+  const [userMessageCount, setUserMessageCount] = useState(0);
   const preselectedQuestions = ["What is the best pasta recipe?"];
+  const chatContainerRef = useRef(null);
+
+  useEffect(() => {
+    if (chatContainerRef.current) {
+      chatContainerRef.current.scrollTop =
+        chatContainerRef.current.scrollHeight;
+    }
+  }, [userMessageCount]);
 
   const handleNewMessageChange = (event) => {
     setNewMessage(event.target.value);
@@ -20,6 +29,7 @@ export default function Home() {
   const handleSendMessage = async (message) => {
     setLoading(true);
     setMessages([...messages, { sender: "User", content: message }]);
+    setUserMessageCount(userMessageCount + 1);
 
     try {
       // Get the last three messages including the current message
@@ -70,7 +80,7 @@ export default function Home() {
   return (
     <Layout>
       <div className={styles.container}>
-        <div className={styles.chatContainer}>
+        <div ref={chatContainerRef} className={styles.chatContainer}>
           {messages.map((message, index) => (
             <div
               key={index}
