@@ -1,0 +1,51 @@
+/* Home.module.css */
+.container {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  height: 100vh;
+}
+
+.chatContainer {
+  display: flex;
+  flex-direction: column;
+  height: 60vh;
+  width: 100%;
+  max-width: 600px;
+  border: 1px solid #dadce0;
+  border-radius: 8px;
+  padding: 16px;
+  overflow-y: auto;
+  margin-bottom: 16px;
+  background-color: #fff;
+}
+
+.inputContainer {
+  display: flex;
+  justify-content: space-between;
+  width: 100%;
+  max-width: 600px;
+}
+
+.message {
+  max-width: 80%;
+  margin-bottom: 8px;
+  line-height: 20px;
+  padding: 10px 12px;
+  border-radius: 20px;
+}
+
+.userMessage {
+  align-self: flex-end;
+  background-color: #dcf8c6;
+}
+
+.botMessage {
+  align-self: flex-start;
+  background-color: #f5f5f5;
+}
+
+.circularProgress {
+  margin: 10px auto;
+}
